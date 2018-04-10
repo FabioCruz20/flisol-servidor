@@ -11,6 +11,19 @@ const router = express.Router();
 router.route('/')
 .get(controllers.getProjects)
 
+router.route('/:id')
+.get(controllers.getProject)
+
+router.route('/create')
+.post(controllers.createProject)
+
+router.route('/update')
+.put(controllers.updateProject)
+
+
+router.route('/delete/:_id')
+.delete(controllers.deleteProject)
+
 // quando usarmos o require() em outro arquivo,
 // estaremos importando o objeto router configurado.
 module.exports = router;
